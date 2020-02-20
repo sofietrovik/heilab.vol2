@@ -21,16 +21,10 @@ typedef enum {
 	STOP,
 }states;
 
-typedef struct Elevator_cart{
-	direction prev_direction;
-	int prev_floor;
-	int destination;
-	
-	states state;
-
-}Elevator_cart;
-
-extern Elevator_cart TheElevator;
+int prev_direction;
+int prev_floor;
+int destination;
+states state;
 
 
 int get_floor_number();

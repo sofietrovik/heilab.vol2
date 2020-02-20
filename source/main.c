@@ -14,14 +14,19 @@ int main(){
 
     while(1){
 
-        switch(TheElevator.state){
+        switch(state){
             case IDLE:
                 check_stop();
                 update_queue();
                 set_prev_floor();
                 set_lights();
+                if(check_empty_queue()){
+                    state = IDLE;
+                    break;
+                }
                 if(order_at_current_floor()){
-                    TheElevator.state = DOOR_OPEN;
+                    state = DOOR_OPEN;
+                    break;
                 }
                 set_moving_state();
                 break;
@@ -29,7 +34,7 @@ int main(){
 
             case MOVING_UP:
                 if (get_floor_number() == 3){
-                    TheElevator.state = IDLE;
+                    state = IDLE;
                     break;
                 }
 
@@ -39,39 +44,39 @@ int main(){
                     set_prev_floor();
                     set_lights();
                     if(hardware_read_stop_signal()){
-                        TheElevator.staette = STOP;
+                        state = STOP;
                         break;
                     }
                     hardware_command_movement(HARDWARE_MOVEMENT_UP);
-                }while(get_floor_number() != TheElevator.destination);
+                }while(get_floor_number() != destination);
 
                 set_prev_floor();
-                TheElevator.prev_direction = UP;
-                TheElevator.state = DOOR_OPEN;
+                prev_direction = UP;
+                state = DOOR_OPEN;
                 check_stop();
                 break;
 
             case MOVING_DOWN:
                 if (get_floor_number() == 0){
-                    TheElevator.state = IDLE;
+                    state = IDLE;
                     break;
                 }
-                
+
                 do{
                     update_queue();
                     set_destination_down();
                     set_prev_floor();
                     set_lights();
                     if(hardware_read_stop_signal()){
-                        TheElevator.staette = STOP;
+                        state = STOP;
                         break;
                     }
                     hardware_command_movement(HARDWARE_MOVEMENT_DOWN);
-                }while(get_floor_number() != TheElevator.destination);               
+                }while(get_floor_number() != destination);               
                 
                 set_prev_floor();
-                TheElevator.prev_direction = DOWN;
-                TheElevator.state = DOOR_OPEN;
+                prev_direction = DOWN;
+                state = DOOR_OPEN;
                 check_stop();
         
                 break;
@@ -85,7 +90,7 @@ int main(){
                 while (hardware_read_stop_signal()){
                     set_prev_floor();
                 }
-                TheElevator.state = IDLE;
+                state = IDLE;
                 break;
 
 
@@ -97,8 +102,8 @@ int main(){
                 hardware_command_movement(HARDWARE_MOVEMENT_STOP);
 
                 open_door();
-                delete_order(TheElevator.destination);
-                TheElevator.state = IDLE;
+                delete_order(destination);
+                state = IDLE;
                 break;
         }
     }
