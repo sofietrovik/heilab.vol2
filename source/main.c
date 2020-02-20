@@ -48,7 +48,7 @@ int main(){
                         break;
                     }
                     hardware_command_movement(HARDWARE_MOVEMENT_UP);
-                }while(get_floor_number() != destination);
+                }while(get_floor_number() != destination || get_floor_number() != 3); //skal ikke bevege seg forbi 4.etasje
 
                 set_prev_floor();
                 prev_direction = UP;
@@ -72,7 +72,7 @@ int main(){
                         break;
                     }
                     hardware_command_movement(HARDWARE_MOVEMENT_DOWN);
-                }while(get_floor_number() != destination);               
+                }while(get_floor_number() != destination || get_floor_number() != 0); //skal ikke bevege seg forbi 1.etasje               
                 
                 set_prev_floor();
                 prev_direction = DOWN;
@@ -95,7 +95,7 @@ int main(){
                 }
 
                 if(get_floor_number() != -1){
-                    state = DOOR_OPEN; //gjør at tilstanddiagrammet ikke gjelder lenger
+                    state = DOOR_OPEN; //gjør at tilstandsiagrammet ikke gjelder lenger
                     break;
                 }
 
@@ -116,15 +116,4 @@ int main(){
                 break;
         }
     }
-
-    /*
-    for (int floor = 0; HardwareOder floor < HARDWARE_NUMBER_OF_FLOORS; ++floor){
-        printf(" (");
-        for (button = HARDWARE_ORDER_UP; button <= HARDWARE_ORDER_DOWN; ++button){
-            //printf("button ");
-            //printf("%d", button);
-            printf("%d     ", Q_MATRIX[floor][button]);
-        }
-        printf(")\n");
-    }*/
 }
