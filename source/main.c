@@ -16,19 +16,19 @@ int main(){
 
         switch(state){
             case IDLE:
-                check_stop();
                 update_queue();
                 set_prev_floor();
                 set_lights();
-                if(check_empty_queue()){
+                if(check_empty_queue() && !hardware_read_stop_signal()){
                     state = IDLE;
                     break;
                 }
-                if(order_at_current_floor()){
+                if(order_at_current_floor() && !hardware_read_stop_signal() ){
                     state = DOOR_OPEN;
                     break;
                 }
                 set_moving_state();
+                check_stop();
                 break;
 
 
@@ -89,7 +89,16 @@ int main(){
 
                 while (hardware_read_stop_signal()){
                     set_prev_floor();
+                    if(get_floor_number() != -1){ //åpne døren hvis den er ved en etasje
+                        hardware_command_door_open(1);
+                    }
                 }
+
+                if(get_floor_number() != -1){
+                    state = DOOR_OPEN; //gjør at tilstanddiagrammet ikke gjelder lenger
+                    break;
+                }
+
                 state = IDLE;
                 break;
 
