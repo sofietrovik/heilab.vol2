@@ -38,6 +38,8 @@ void start_elevator(){
 
 
 void open_door(){
+  hardware_command_movement(HARDWARE_MOVEMENT_STOP);
+  
   clock_t start_time = clock();
   do {
     hardware_command_movement(HARDWARE_MOVEMENT_STOP);

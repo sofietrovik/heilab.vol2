@@ -17,4 +17,9 @@ bool check_empty_queue();
 
 void delete_order(int floor);
 
+bool order_at_current_floor();
+
+bool orders_below_floor();
+
+bool orders_above_floor();
 
