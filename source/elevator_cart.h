@@ -21,9 +21,9 @@ typedef enum {
 	STOP,
 }states;
 
-int prev_direction;
+
 int prev_floor;
-int destination;
+
 states state;
 
 
@@ -31,7 +31,7 @@ int get_floor_number();
 
 void set_prev_floor();
 
-void start_elevator();
+void initialize();
 
 void open_door();
 

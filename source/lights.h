@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "hardware.h"
-#include "queue.h"
-#include "elevator_cart.h"
+#include "queue.h" //orders
+#include "elevator_cart.h" //current floor
 
 void set_lights();
 

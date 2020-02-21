@@ -21,7 +21,7 @@ void set_prev_floor(){
   }
 }
 
-void start_elevator(){
+void initialize(){
    int error = hardware_init();
    if(error != 0){
         fprintf(stderr, "Unable to initialize hardware\n");
@@ -39,7 +39,7 @@ void start_elevator(){
 
 void open_door(){
   hardware_command_movement(HARDWARE_MOVEMENT_STOP);
-  
+
   clock_t start_time = clock();
   do {
     hardware_command_movement(HARDWARE_MOVEMENT_STOP);

@@ -3,6 +3,7 @@
 
 void state_machine(){
     switch(state){
+
     case IDLE:
         update_elevator();
         set_elevator_state();
@@ -24,20 +25,18 @@ void state_machine(){
         check_stop();
         break;
 
-
     case STOP:
         reset_queue();
 
         stop_elevator();
 
-        if(get_floor_number() != -1){
+        if(get_floor_number() != -1){ //at a floor
             state = DOOR_OPEN; 
             break;
         }
 
         state = IDLE;
         break;
-
 
     case DOOR_OPEN:
         update_elevator();
@@ -53,6 +52,24 @@ void state_machine(){
         break;
 	}
 }
+
+
+
+
+void set_elevator_state(){
+    if(check_empty_queue() && !hardware_read_stop_signal()){
+        state = IDLE;
+        return;
+    }
+
+    if(order_at_current_floor() && !hardware_read_stop_signal() ){
+        state = DOOR_OPEN;
+        return;
+    }
+    set_moving_state();
+    check_stop();
+}
+
 
 void update_elevator(){
 	 update_queue();
@@ -108,18 +125,6 @@ void stop_elevator(){
 }
 
 
-void set_elevator_state(){
-    if(check_empty_queue() && !hardware_read_stop_signal()){
-        state = IDLE;
-        return;
-    }
 
-    if(order_at_current_floor() && !hardware_read_stop_signal() ){
-        state = DOOR_OPEN;
-        return;
-    }
-    set_moving_state();
-    check_stop();
-}
 
 

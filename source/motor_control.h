@@ -3,9 +3,10 @@
 #include "elevator_cart.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
+int prev_direction;
 
+int destination;
 
 void set_moving_state();
 

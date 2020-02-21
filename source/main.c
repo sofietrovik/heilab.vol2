@@ -3,7 +3,7 @@
 
 int main(){
 
-    start_elevator();
+    initialize();
 
     while(1){
         state_machine();
