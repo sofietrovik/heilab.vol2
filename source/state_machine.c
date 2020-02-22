@@ -124,6 +124,12 @@ void stop_elevator(){
     }
 }
 
+void check_stop(){
+  if(hardware_read_stop_signal()){
+    state = STOP;
+  }
+}
+
 
 
 

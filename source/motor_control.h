@@ -1,13 +1,15 @@
+/**
+* @file 
+* @brief FIle that will calculate the next floor the elevator needs to move to. 
+*/
+
 #pragma once
 
 #include "elevator_cart.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
-* @file 
-* @brief FIle that will calculate the next floor the elevator needs to move to. 
-*/
+
 
 /**
 * @brief saves the last direction the elevator had. It can only be up or down.

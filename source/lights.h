@@ -1,3 +1,9 @@
+
+/**
+* @file 
+* @brief File that will turn on and off all the lights for the entire elevator when needed. 
+*/
+
 #pragma once
 #include <stdio.h>
 #include <stdlib.h>
@@ -5,10 +11,6 @@
 #include "queue.h" //orders
 #include "elevator_cart.h" //current floor
 
-/**
-* @file 
-* @brief File that will turn on and off the lights for the entire when needed. 
-*/
 
 /**
 * @brief updates all the lights, including order lights, stop light and floor indicator lights. 
