@@ -50,8 +50,9 @@ void open_door(){
         break;
     }
     hardware_command_door_open(1);
-    if (hardware_read_obstruction_signal()){
+    if (hardware_read_obstruction_signal() || order_at_current_floor()){
         start_time = clock();
+        delete_orders(destination);
     }
     check_stop();
 

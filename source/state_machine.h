@@ -9,23 +9,6 @@
 #include "elevator_cart.h"
 #include "hardware.h" //trengs denne?
 
-/**
-*@brief Enum for elevator @c state. 
-*/
-
-typedef enum {
-	IDLE,
-	DOOR_OPEN,
-	MOVING_DOWN,
-	MOVING_UP,
-	STOP,
-}states;
-
-/**
-* @brief Global variable for the current state the machine is on
-*/
-
-states state;
 
 /**
 * @brief 

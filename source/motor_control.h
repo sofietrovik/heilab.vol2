@@ -1,6 +1,6 @@
 /**
 * @file 
-* @brief FIle that will calculate the next floor the elevator needs to move to. 
+* @brief file that will calculate the distination and how to get there. 
 */
 
 #pragma once
@@ -9,16 +9,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef enum{
+	UP,
+	DOWN,
+}Direction;
+
 
 
 /**
 * @brief saves the last direction the elevator had. It can only be up or down.
 */
 
-direction prev_direction;
+Direction prev_direction;
 
 /**
-* @brief Global variable for the next floor the elevator wants to move to. 
+* @brief Global variable for the next floor the elevator should move to. 
 */
 
 int destination;
@@ -30,13 +35,13 @@ int destination;
 void set_moving_state();
 
 /**
-* @brief Elevator is moving upwards, and this function will choose the closest floor with an order to move to. 
+* @brief Elevator is moving upwards, and this function will set the destination by prioritizing inside or up buttons pushed over down buttons pushed. 
 */
 
 void set_destination_up();
 
 /**
-* @brief Elevator is moving downwards, and this function will choose the closest floor with an order to move to. 
+* @brief Elevator is moving downwards, and this function will set the destination by prioritizing inside or down buttons pushed over up buttons pushed. 
 */
 void set_destination_down();
 

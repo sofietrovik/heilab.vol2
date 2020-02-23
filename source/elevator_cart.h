@@ -6,7 +6,7 @@
 #include <time.h>
 /**
 * @file 
-* @brief 
+* @brief Handles  
 
 */
 
@@ -17,18 +17,30 @@
 
 
 
-typedef enum{
-	UP,
-	DOWN,
-}direction;
-
-
-
 
 /**
 * @brief Global variable for the last floor the elevator was on
 */
 int prev_floor;
+
+
+/**
+*@brief Enum for elevator @c state. 
+*/
+
+typedef enum {
+	IDLE,
+	DOOR_OPEN,
+	MOVING_DOWN,
+	MOVING_UP,
+	STOP,
+}Elevator_states;
+
+/**
+* @brief Global variable for the current state the machine is on
+*/
+
+Elevator_states state;
 
 
 
@@ -42,19 +54,19 @@ int prev_floor;
 int get_floor_number();
 
 /**
-* @brief Updates which floor the elevator was last on. 
-
+* @brief Updates which floor the last passed. 
 */
+
 void set_prev_floor();
 
 /**
-* @brief Inizalizes the elevator by moving the elevator to the first floor. 
+* @brief Initializes the elevator by moving the elevator to the first floor. 
 */
 
 void initialize();
 
 /**
-* @brief Stops the elevator and then opens the elevator doors for 3 seconds (if there is no obstructions). If there is a obstruction it starts again. 
+* @brief Stops the elevator and then opens the elevator doors for 3 seconds. If there is a obstruction or if a button at the floor is being pushed, it restarts the timer. 
 */
 
 void open_door();

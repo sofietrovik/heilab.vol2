@@ -42,7 +42,7 @@ void state_machine(){
         update_elevator();
 
         open_door();
-        delete_order(destination);
+        delete_orders(destination);
 
         if(hardware_read_stop_signal()){
         	state = STOP;

@@ -33,7 +33,7 @@ bool check_empty_queue(){
     return true;
 }
  
-void delete_order(int floor){
+void delete_orders(int floor){
     for (HardwareOrder button = HARDWARE_ORDER_UP; button <= HARDWARE_ORDER_DOWN; ++button){ 
         Q_MATRIX[floor][button] = 0;
 }
