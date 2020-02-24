@@ -1,0 +1,48 @@
+\hypertarget{motor__control_8h}{}\section{source/motor\+\_\+control.h File Reference}
+\label{motor__control_8h}\index{source/motor\+\_\+control.\+h@{source/motor\+\_\+control.\+h}}
+
+
+file that will calculate the distination and how to get there.  
+
+
+{\ttfamily \#include \char`\"{}elevator\+\_\+cart.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for motor\+\_\+control.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motor__control_8h_a224b9163917ac32fc95a60d8c1eec3aa}\label{motor__control_8h_a224b9163917ac32fc95a60d8c1eec3aa}} 
+enum {\bfseries Direction} \{ {\bfseries UP}, 
+{\bfseries D\+O\+WN}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motor__control_8h_a58e8f191c83ab37582b8c789c39722dc}\label{motor__control_8h_a58e8f191c83ab37582b8c789c39722dc}} 
+void \hyperlink{motor__control_8h_a58e8f191c83ab37582b8c789c39722dc}{set\+\_\+moving\+\_\+state} ()
+\begin{DoxyCompactList}\small\item\em chooses between two states M\+O\+V\+I\+N\+G\+\_\+\+UP or M\+O\+V\+I\+N\+G\+\_\+\+D\+O\+WN according to last direction and orders. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motor__control_8h_a15ab352e2be5569c4d7ff29fde029e4b}\label{motor__control_8h_a15ab352e2be5569c4d7ff29fde029e4b}} 
+void \hyperlink{motor__control_8h_a15ab352e2be5569c4d7ff29fde029e4b}{set\+\_\+destination\+\_\+up} ()
+\begin{DoxyCompactList}\small\item\em Elevator is moving upwards, and this function will set the destination by prioritizing inside or up buttons pushed over down buttons pushed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motor__control_8h_aadeafb163700c216e7d0fb5cf9b41cf4}\label{motor__control_8h_aadeafb163700c216e7d0fb5cf9b41cf4}} 
+void \hyperlink{motor__control_8h_aadeafb163700c216e7d0fb5cf9b41cf4}{set\+\_\+destination\+\_\+down} ()
+\begin{DoxyCompactList}\small\item\em Elevator is moving downwards, and this function will set the destination by prioritizing inside or down buttons pushed over up buttons pushed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motor__control_8h_a9a6b3cc251d5ad9738bfc2721fe58b36}\label{motor__control_8h_a9a6b3cc251d5ad9738bfc2721fe58b36}} 
+Direction \hyperlink{motor__control_8h_a9a6b3cc251d5ad9738bfc2721fe58b36}{prev\+\_\+direction}
+\begin{DoxyCompactList}\small\item\em saves the last direction the elevator had. It can only be up or down. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{motor__control_8h_a17744967a9eda456c21490b51b74917a}\label{motor__control_8h_a17744967a9eda456c21490b51b74917a}} 
+int \hyperlink{motor__control_8h_a17744967a9eda456c21490b51b74917a}{destination}
+\begin{DoxyCompactList}\small\item\em Global variable for the next floor the elevator should move to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+file that will calculate the distination and how to get there. 
+

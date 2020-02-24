@@ -1,0 +1,42 @@
+digraph "source/motor_control.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="source/motor_control.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 [label="elevator_cart.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elevator__cart_8h.html",tooltip="Handles. "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="stdio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="stdlib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="hardware.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hardware_8h.html",tooltip="Driver for the elevator hardware. "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="time.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="queue.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$queue_8h.html",tooltip="File that will make and update the queue system for all the orders. "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="stdbool.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node0 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="lights.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lights_8h.html",tooltip="File that will turn on and off all the lights for the entire elevator when needed. "];
+  Node8 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="state_machine.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$state__machine_8h.html"];
+  Node9 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node0 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node0 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+}

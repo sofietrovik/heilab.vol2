@@ -2,7 +2,7 @@
 
 
 void state_machine(){
-    switch(state){
+    switch(g_state){
 
     case IDLE:
         update_elevator();
@@ -13,7 +13,7 @@ void state_machine(){
 
         move_upwards();
 
-        state = DOOR_OPEN;
+        g_state = DOOR_OPEN;
         check_stop();
         break;
 
@@ -21,12 +21,14 @@ void state_machine(){
 
         move_downwards();
               
-        state = DOOR_OPEN;
+        g_state = DOOR_OPEN;
         check_stop();
         break;
 
     case STOP:
+
         reset_queue();
+        update_elevator();
 
         stop_elevator();
 
@@ -35,7 +37,7 @@ void state_machine(){
             break;
         }
 
-        state = IDLE;
+        g_state = IDLE;
         break;
 
     case DOOR_OPEN:
@@ -48,7 +50,7 @@ void state_machine(){
         	state = STOP;
         	break;
     	}
-        state = IDLE;
+        g_state = IDLE;
         break;
 	}
 }
@@ -58,12 +60,12 @@ void state_machine(){
 
 void set_elevator_state(){
     if(check_empty_queue() && !hardware_read_stop_signal()){
-        state = IDLE;
+        g_state = IDLE;
         return;
     }
 
     if(order_at_current_floor() && !hardware_read_stop_signal() ){
-        state = DOOR_OPEN;
+        g_state = DOOR_OPEN;
         return;
     }
     set_moving_state();
@@ -82,15 +84,19 @@ void move_downwards(){
     do{
         update_elevator();
         set_destination_down();
+             if(get_floor_number() != -1){ //in case of in between floors, it should not update in case of multiple stop-signals
+        prev_direction = DOWN;
+     }
         if(hardware_read_stop_signal()){
             state = STOP;
             break;
         }
         hardware_command_movement(HARDWARE_MOVEMENT_DOWN);
-    }while(get_floor_number() != destination && get_floor_number() != 0); //skal ikke bevege seg forbi 1.etasje 
+    }while(get_floor_number() != destination && get_floor_number() != 0); //not allowed to move past 1.st floor. 
 
      set_prev_floor();
-     prev_direction = DOWN;
+
+     
 }
 
 
@@ -98,6 +104,9 @@ void move_upwards(){
     do{
     	update_elevator();
         set_destination_up();
+            if(get_floor_number() != -1){ //in case of in between floors, it should not update in case of multiple stop-signals
+        prev_direction = UP;
+     }
         if(hardware_read_stop_signal()){
             state = STOP;
             break;
@@ -107,7 +116,8 @@ void move_upwards(){
 
 
     set_prev_floor();
-    prev_direction = UP;
+
+
 
 }
 
@@ -129,6 +139,32 @@ void check_stop(){
     state = STOP;
   }
 }
+
+void open_door(){
+  hardware_command_movement(HARDWARE_MOVEMENT_STOP);
+
+  clock_t start_time = clock();
+  do {
+    hardware_command_movement(HARDWARE_MOVEMENT_STOP);
+    update_queue();
+    set_lights();
+    if(hardware_read_stop_signal()){
+        state = STOP;
+        break;
+    }
+    hardware_command_door_open(1);
+    if (hardware_read_obstruction_signal() || order_at_current_floor()){
+        start_time = clock();
+        delete_orders(destination);
+    }
+    check_stop();
+
+
+  } while (clock()-start_time < 3*CLOCKS_PER_SEC);
+  
+  hardware_command_door_open(0);
+  }
+
 
 
 

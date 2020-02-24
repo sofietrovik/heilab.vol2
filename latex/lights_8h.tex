@@ -1,0 +1,36 @@
+\hypertarget{lights_8h}{}\section{source/lights.h File Reference}
+\label{lights_8h}\index{source/lights.\+h@{source/lights.\+h}}
+
+
+File that will turn on and off all the lights for the entire elevator when needed.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hardware.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}elevator\+\_\+cart.\+h\char`\"{}}\newline
+Include dependency graph for lights.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{lights_8h_adf6ca260af46197661efdb5c6402ebf4}\label{lights_8h_adf6ca260af46197661efdb5c6402ebf4}} 
+void \hyperlink{lights_8h_adf6ca260af46197661efdb5c6402ebf4}{set\+\_\+lights} ()
+\begin{DoxyCompactList}\small\item\em updates all the lights, including order lights, stop light and floor indicator lights. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{lights_8h_ac3cbb05034ff71c26f5b7eab1df24dbf}\label{lights_8h_ac3cbb05034ff71c26f5b7eab1df24dbf}} 
+void \hyperlink{lights_8h_ac3cbb05034ff71c26f5b7eab1df24dbf}{set\+\_\+order\+\_\+lights} ()
+\begin{DoxyCompactList}\small\item\em Turns the lights on for which buttons are pushed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{lights_8h_a3d4332abdcc6047bd872881f1ff49d3b}\label{lights_8h_a3d4332abdcc6047bd872881f1ff49d3b}} 
+void \hyperlink{lights_8h_a3d4332abdcc6047bd872881f1ff49d3b}{set\+\_\+floor\+\_\+lights} ()
+\begin{DoxyCompactList}\small\item\em updates the floor indicator lights when the elevator switches floor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{lights_8h_a1636dcf5e18fde0e1f606fe100351854}\label{lights_8h_a1636dcf5e18fde0e1f606fe100351854}} 
+void \hyperlink{lights_8h_a1636dcf5e18fde0e1f606fe100351854}{set\+\_\+stop\+\_\+light} ()
+\begin{DoxyCompactList}\small\item\em checks if state in stop, and then turns on stop light \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File that will turn on and off all the lights for the entire elevator when needed. 
+

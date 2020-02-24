@@ -1,0 +1,33 @@
+digraph "source/queue.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node10 [label="source/queue.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="source/elevator_cart.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elevator__cart_8h.html",tooltip="Handles. "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="source/elevator_cart.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$elevator__cart_8c_source.html"];
+  Node11 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="source/motor_control.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$motor__control_8h.html",tooltip="file that will calculate the distination and how to get there. "];
+  Node13 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="source/state_machine.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$state__machine_8h.html"];
+  Node14 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="source/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c_source.html"];
+  Node14 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="source/state_machine.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$state__machine_8c_source.html"];
+  Node13 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="source/motor_control.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$motor__control_8c_source.html"];
+  Node11 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="source/lights.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lights_8h.html",tooltip="File that will turn on and off all the lights for the entire elevator when needed. "];
+  Node18 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node18 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="source/lights.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lights_8c_source.html"];
+  Node11 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node20 [label="source/queue.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$queue_8c_source.html"];
+}

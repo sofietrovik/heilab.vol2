@@ -1,0 +1,136 @@
+\hypertarget{queue_8h}{}\section{source/queue.h File Reference}
+\label{queue_8h}\index{source/queue.\+h@{source/queue.\+h}}
+
+
+File that will make and update the queue system for all the orders.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hardware.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}elevator\+\_\+cart.\+h\char`\"{}}\newline
+Include dependency graph for queue.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{queue_8h_abb09ef617cbefa86630ad21efb7ac78c}\label{queue_8h_abb09ef617cbefa86630ad21efb7ac78c}} 
+void \hyperlink{queue_8h_abb09ef617cbefa86630ad21efb7ac78c}{update\+\_\+queue} ()
+\begin{DoxyCompactList}\small\item\em Updates the {\ttfamily Q\+\_\+\+M\+A\+T\+R\+IX} by iterating through all order buttons and checking if they are being pushed. The value of the specified button is set to 1 if it is being pushed. Else it will do nothing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{queue_8h_a102cb1b6c86c407b2abd802ba0f8a323}\label{queue_8h_a102cb1b6c86c407b2abd802ba0f8a323}} 
+void \hyperlink{queue_8h_a102cb1b6c86c407b2abd802ba0f8a323}{reset\+\_\+queue} ()
+\begin{DoxyCompactList}\small\item\em Empties the entire {\ttfamily Q\+\_\+\+M\+A\+T\+R\+IX}. Every number in the matrix is set to zero to indicate that there are no more orders. \end{DoxyCompactList}\item 
+bool \hyperlink{queue_8h_aa6b5cb02e7b721babea577c052370c58}{check\+\_\+empty\+\_\+queue} ()
+\begin{DoxyCompactList}\small\item\em checks to see if there are any orders in the Q\+\_\+\+M\+A\+T\+R\+IX. \end{DoxyCompactList}\item 
+void \hyperlink{queue_8h_a7edb54000ad75dd7afa06875216576c4}{delete\+\_\+orders} (int floor)
+\begin{DoxyCompactList}\small\item\em Deletes an entire row of orders in the {\ttfamily Q\+\_\+\+M\+A\+T\+R\+IX} by setting them to 0. \end{DoxyCompactList}\item 
+bool \hyperlink{queue_8h_a87a6de47c0074f9c655ebbb6e0c6aefb}{order\+\_\+at\+\_\+current\+\_\+floor} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are any orders at the current floor. \end{DoxyCompactList}\item 
+bool \hyperlink{queue_8h_a1127beaa074059a8e4ba002d3b318457}{orders\+\_\+below\+\_\+floor} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are any orders below the current floor. \end{DoxyCompactList}\item 
+bool \hyperlink{queue_8h_a2012e4d62d555ca9be14cac41f857e53}{orders\+\_\+above\+\_\+floor} ()
+\begin{DoxyCompactList}\small\item\em Checks if there are any orders above the current floor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{queue_8h_aa396c10ab87fb9726756d45c2f5fc863}\label{queue_8h_aa396c10ab87fb9726756d45c2f5fc863}} 
+unsigned int \hyperlink{queue_8h_aa396c10ab87fb9726756d45c2f5fc863}{Q\+\_\+\+M\+A\+T\+R\+IX} \mbox{[}H\+A\+R\+D\+W\+A\+R\+E\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+F\+L\+O\+O\+RS\mbox{]}\mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em A matrix to save all the orders in. The rows represent floors, while the colums represent order type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File that will make and update the queue system for all the orders. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{queue_8h_aa6b5cb02e7b721babea577c052370c58}\label{queue_8h_aa6b5cb02e7b721babea577c052370c58}} 
+\index{queue.\+h@{queue.\+h}!check\+\_\+empty\+\_\+queue@{check\+\_\+empty\+\_\+queue}}
+\index{check\+\_\+empty\+\_\+queue@{check\+\_\+empty\+\_\+queue}!queue.\+h@{queue.\+h}}
+\subsubsection{\texorpdfstring{check\+\_\+empty\+\_\+queue()}{check\_empty\_queue()}}
+{\footnotesize\ttfamily bool check\+\_\+empty\+\_\+queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks to see if there are any orders in the Q\+\_\+\+M\+A\+T\+R\+IX. 
+
+\begin{DoxyReturn}{Returns}
+1 if there are only 0 in the Q\+\_\+\+M\+A\+T\+R\+IX. If there are any 1 values in the Q\+\_\+\+M\+A\+T\+R\+IX, the function will return false. 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a7edb54000ad75dd7afa06875216576c4}\label{queue_8h_a7edb54000ad75dd7afa06875216576c4}} 
+\index{queue.\+h@{queue.\+h}!delete\+\_\+orders@{delete\+\_\+orders}}
+\index{delete\+\_\+orders@{delete\+\_\+orders}!queue.\+h@{queue.\+h}}
+\subsubsection{\texorpdfstring{delete\+\_\+orders()}{delete\_orders()}}
+{\footnotesize\ttfamily void delete\+\_\+orders (\begin{DoxyParamCaption}\item[{int}]{floor }\end{DoxyParamCaption})}
+
+
+
+Deletes an entire row of orders in the {\ttfamily Q\+\_\+\+M\+A\+T\+R\+IX} by setting them to 0. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em floor} & The floor that indicates which row in the matrix that is to be deleted. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a87a6de47c0074f9c655ebbb6e0c6aefb}\label{queue_8h_a87a6de47c0074f9c655ebbb6e0c6aefb}} 
+\index{queue.\+h@{queue.\+h}!order\+\_\+at\+\_\+current\+\_\+floor@{order\+\_\+at\+\_\+current\+\_\+floor}}
+\index{order\+\_\+at\+\_\+current\+\_\+floor@{order\+\_\+at\+\_\+current\+\_\+floor}!queue.\+h@{queue.\+h}}
+\subsubsection{\texorpdfstring{order\+\_\+at\+\_\+current\+\_\+floor()}{order\_at\_current\_floor()}}
+{\footnotesize\ttfamily bool order\+\_\+at\+\_\+current\+\_\+floor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if there are any orders at the current floor. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the statement above is true. Else it returs false. 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a2012e4d62d555ca9be14cac41f857e53}\label{queue_8h_a2012e4d62d555ca9be14cac41f857e53}} 
+\index{queue.\+h@{queue.\+h}!orders\+\_\+above\+\_\+floor@{orders\+\_\+above\+\_\+floor}}
+\index{orders\+\_\+above\+\_\+floor@{orders\+\_\+above\+\_\+floor}!queue.\+h@{queue.\+h}}
+\subsubsection{\texorpdfstring{orders\+\_\+above\+\_\+floor()}{orders\_above\_floor()}}
+{\footnotesize\ttfamily bool orders\+\_\+above\+\_\+floor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if there are any orders above the current floor. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the statement above is true. Else it returs false. 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file queue.\+c.
+
+\mbox{\Hypertarget{queue_8h_a1127beaa074059a8e4ba002d3b318457}\label{queue_8h_a1127beaa074059a8e4ba002d3b318457}} 
+\index{queue.\+h@{queue.\+h}!orders\+\_\+below\+\_\+floor@{orders\+\_\+below\+\_\+floor}}
+\index{orders\+\_\+below\+\_\+floor@{orders\+\_\+below\+\_\+floor}!queue.\+h@{queue.\+h}}
+\subsubsection{\texorpdfstring{orders\+\_\+below\+\_\+floor()}{orders\_below\_floor()}}
+{\footnotesize\ttfamily bool orders\+\_\+below\+\_\+floor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if there are any orders below the current floor. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the statement above is true. Else it returs false. 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file queue.\+c.
+

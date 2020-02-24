@@ -1,0 +1,36 @@
+\hypertarget{state__machine_8h}{}\section{source/state\+\_\+machine.h File Reference}
+\label{state__machine_8h}\index{source/state\+\_\+machine.\+h@{source/state\+\_\+machine.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}motor\+\_\+control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}elevator\+\_\+cart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hardware.\+h\char`\"{}}\newline
+Include dependency graph for state\+\_\+machine.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{state__machine_8h_a39943273f62c5b66673647a0a6cdb457}\label{state__machine_8h_a39943273f62c5b66673647a0a6cdb457}} 
+void {\bfseries state\+\_\+machine} ()
+\item 
+\mbox{\Hypertarget{state__machine_8h_a3aa5cf92f972d3c67e203a9d3eb4808f}\label{state__machine_8h_a3aa5cf92f972d3c67e203a9d3eb4808f}} 
+void \hyperlink{state__machine_8h_a3aa5cf92f972d3c67e203a9d3eb4808f}{update\+\_\+elevator} ()
+\begin{DoxyCompactList}\small\item\em Will update {\ttfamily Q\+\_\+\+M\+A\+T\+R\+IX}, {\ttfamily prev\+\_\+floor} and the lights by calling {\ttfamily update\+\_\+queue} , {\ttfamily set\+\_\+lights} and {\ttfamily set\+\_\+prev\+\_\+floor} . \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{state__machine_8h_afd58340463020de9767f38b6ae87179f}\label{state__machine_8h_afd58340463020de9767f38b6ae87179f}} 
+void \hyperlink{state__machine_8h_afd58340463020de9767f38b6ae87179f}{move\+\_\+upwards} ()
+\begin{DoxyCompactList}\small\item\em Moves the elevator upwards to its {\ttfamily destination}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{state__machine_8h_af8cd1fd0fe0f7271d59ec9d04c8d482b}\label{state__machine_8h_af8cd1fd0fe0f7271d59ec9d04c8d482b}} 
+void \hyperlink{state__machine_8h_af8cd1fd0fe0f7271d59ec9d04c8d482b}{move\+\_\+downwards} ()
+\begin{DoxyCompactList}\small\item\em Moves the elevator downwards to its {\ttfamily destination}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{state__machine_8h_a3260edaebb6f79c66a07fbba62c22bdb}\label{state__machine_8h_a3260edaebb6f79c66a07fbba62c22bdb}} 
+void \hyperlink{state__machine_8h_a3260edaebb6f79c66a07fbba62c22bdb}{stop\+\_\+elevator} ()
+\begin{DoxyCompactList}\small\item\em Stops the elevator only when there is an emergency. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{state__machine_8h_ab76cb39ea234d8f2a8836f7c7218cbe4}\label{state__machine_8h_ab76cb39ea234d8f2a8836f7c7218cbe4}} 
+void \hyperlink{state__machine_8h_ab76cb39ea234d8f2a8836f7c7218cbe4}{set\+\_\+elevator\+\_\+state} ()
+\begin{DoxyCompactList}\small\item\em Chooses which {\ttfamily states} the elevator will go to next by updating {\ttfamily state}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{state__machine_8h_a075099d294f5f4d5b63f53c2c9edd462}\label{state__machine_8h_a075099d294f5f4d5b63f53c2c9edd462}} 
+void \hyperlink{state__machine_8h_a075099d294f5f4d5b63f53c2c9edd462}{check\+\_\+stop} ()
+\begin{DoxyCompactList}\small\item\em Checks to see if the emergency stop button is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}

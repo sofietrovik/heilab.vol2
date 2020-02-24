@@ -1,0 +1,83 @@
+\hypertarget{elevator__cart_8h}{}\section{source/elevator\+\_\+cart.h File Reference}
+\label{elevator__cart_8h}\index{source/elevator\+\_\+cart.\+h@{source/elevator\+\_\+cart.\+h}}
+
+
+Handles.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hardware.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}queue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motor\+\_\+control.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lights.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+\_\+machine.\+h\char`\"{}}\newline
+Include dependency graph for elevator\+\_\+cart.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{elevator__cart_8h_a0fadac03f2beec3343edca103a042392}\label{elevator__cart_8h_a0fadac03f2beec3343edca103a042392}} 
+enum \hyperlink{elevator__cart_8h_a0fadac03f2beec3343edca103a042392}{Elevator\+\_\+states} \{ \newline
+{\bfseries I\+D\+LE}, 
+{\bfseries D\+O\+O\+R\+\_\+\+O\+P\+EN}, 
+{\bfseries M\+O\+V\+I\+N\+G\+\_\+\+D\+O\+WN}, 
+{\bfseries M\+O\+V\+I\+N\+G\+\_\+\+UP}, 
+\newline
+{\bfseries S\+T\+OP}
+ \}\begin{DoxyCompactList}\small\item\em Enum for elevator {\ttfamily state}. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{elevator__cart_8h_a41b9e0ab0e8ddb4fb3bdc597478fd1b8}{get\+\_\+floor\+\_\+number} ()
+\begin{DoxyCompactList}\small\item\em Returns which floor the elevator is currelty on or if it is between floors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{elevator__cart_8h_a0545c8497350f221a1f1d69a6607ef82}\label{elevator__cart_8h_a0545c8497350f221a1f1d69a6607ef82}} 
+void \hyperlink{elevator__cart_8h_a0545c8497350f221a1f1d69a6607ef82}{set\+\_\+prev\+\_\+floor} ()
+\begin{DoxyCompactList}\small\item\em Updates which floor the last passed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{elevator__cart_8h_a25a40b6614565f755233080a384c35f1}\label{elevator__cart_8h_a25a40b6614565f755233080a384c35f1}} 
+void \hyperlink{elevator__cart_8h_a25a40b6614565f755233080a384c35f1}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initializes the elevator by moving the elevator to the first floor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{elevator__cart_8h_a423745a554b7b74fd8a6ee276f3ee4f6}\label{elevator__cart_8h_a423745a554b7b74fd8a6ee276f3ee4f6}} 
+void \hyperlink{elevator__cart_8h_a423745a554b7b74fd8a6ee276f3ee4f6}{open\+\_\+door} ()
+\begin{DoxyCompactList}\small\item\em Stops the elevator and then opens the elevator doors for 3 seconds. If there is a obstruction or if a button at the floor is being pushed, it restarts the timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{elevator__cart_8h_a84a4e9802b19984bf4917db36fb6ec68}\label{elevator__cart_8h_a84a4e9802b19984bf4917db36fb6ec68}} 
+int \hyperlink{elevator__cart_8h_a84a4e9802b19984bf4917db36fb6ec68}{prev\+\_\+floor}
+\begin{DoxyCompactList}\small\item\em Global variable for the last floor the elevator was on. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{elevator__cart_8h_ab71c057869bdbb8dcd58cf51450a7d4a}\label{elevator__cart_8h_ab71c057869bdbb8dcd58cf51450a7d4a}} 
+\hyperlink{elevator__cart_8h_a0fadac03f2beec3343edca103a042392}{Elevator\+\_\+states} \hyperlink{elevator__cart_8h_ab71c057869bdbb8dcd58cf51450a7d4a}{state}
+\begin{DoxyCompactList}\small\item\em Global variable for the current state the machine is on. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{elevator__cart_8h_a41b9e0ab0e8ddb4fb3bdc597478fd1b8}\label{elevator__cart_8h_a41b9e0ab0e8ddb4fb3bdc597478fd1b8}} 
+\index{elevator\+\_\+cart.\+h@{elevator\+\_\+cart.\+h}!get\+\_\+floor\+\_\+number@{get\+\_\+floor\+\_\+number}}
+\index{get\+\_\+floor\+\_\+number@{get\+\_\+floor\+\_\+number}!elevator\+\_\+cart.\+h@{elevator\+\_\+cart.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+floor\+\_\+number()}{get\_floor\_number()}}
+{\footnotesize\ttfamily int get\+\_\+floor\+\_\+number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns which floor the elevator is currelty on or if it is between floors. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 for the first floor, returns 1 for the second floor, returns 2 for the third floor and 3 for the fourth floor. Returns -\/1 if the elevator is between floors or not on any of the four floors.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Elevator has to be between 1 and 4 floors. 
+\end{DoxyWarning}
+
+
+Definition at line 6 of file elevator\+\_\+cart.\+c.
+
