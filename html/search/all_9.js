@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['prev_5fdirection',['prev_direction',['../motor__control_8h.html#a9a6b3cc251d5ad9738bfc2721fe58b36',1,'motor_control.h']]],
-  ['prev_5ffloor',['prev_floor',['../elevator__cart_8h.html#a84a4e9802b19984bf4917db36fb6ec68',1,'elevator_cart.h']]]
+  ['update_5felevator',['update_elevator',['../motor__control_8h.html#a3aa5cf92f972d3c67e203a9d3eb4808f',1,'motor_control.c']]],
+  ['update_5fqueue',['update_queue',['../queue_8h.html#abb09ef617cbefa86630ad21efb7ac78c',1,'queue.c']]]
 ];

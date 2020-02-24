@@ -2,47 +2,56 @@
 \label{queue_8h}\index{source/queue.\+h@{source/queue.\+h}}
 
 
-File that will make and update the queue system for all the orders.  
+File that will handle all the orders by updating a matrix ( {\ttfamily G\+\_\+\+Q\+\_\+\+M\+A\+T\+R\+IX} ).  
 
 
-{\ttfamily \#include $<$stdbool.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}hardware.\+h\char`\"{}}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}elevator\+\_\+cart.\+h\char`\"{}}\newline
-Include dependency graph for queue.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+Include dependency graph for queue.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{queue_8h__dep__incl}
+\end{center}
+\end{figure}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{queue_8h_abb09ef617cbefa86630ad21efb7ac78c}\label{queue_8h_abb09ef617cbefa86630ad21efb7ac78c}} 
 void \hyperlink{queue_8h_abb09ef617cbefa86630ad21efb7ac78c}{update\+\_\+queue} ()
-\begin{DoxyCompactList}\small\item\em Updates the {\ttfamily Q\+\_\+\+M\+A\+T\+R\+IX} by iterating through all order buttons and checking if they are being pushed. The value of the specified button is set to 1 if it is being pushed. Else it will do nothing. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Updates the {\ttfamily G\+\_\+\+Q\+\_\+\+M\+A\+T\+R\+IX} by iterating through all order buttons and checking if they are being pushed. The value of the specified button is set to 1 if it is being pushed. Else it will do nothing. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{queue_8h_a102cb1b6c86c407b2abd802ba0f8a323}\label{queue_8h_a102cb1b6c86c407b2abd802ba0f8a323}} 
 void \hyperlink{queue_8h_a102cb1b6c86c407b2abd802ba0f8a323}{reset\+\_\+queue} ()
-\begin{DoxyCompactList}\small\item\em Empties the entire {\ttfamily Q\+\_\+\+M\+A\+T\+R\+IX}. Every number in the matrix is set to zero to indicate that there are no more orders. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Empties the entire {\ttfamily G\+\_\+\+Q\+\_\+\+M\+A\+T\+R\+IX}. Every number in the matrix is set to zero to indicate that there are no more orders. \end{DoxyCompactList}\item 
 bool \hyperlink{queue_8h_aa6b5cb02e7b721babea577c052370c58}{check\+\_\+empty\+\_\+queue} ()
-\begin{DoxyCompactList}\small\item\em checks to see if there are any orders in the Q\+\_\+\+M\+A\+T\+R\+IX. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em checks to see if there are any orders in the {\ttfamily G\+\_\+\+Q\+\_\+\+M\+A\+T\+R\+IX}. \end{DoxyCompactList}\item 
 void \hyperlink{queue_8h_a7edb54000ad75dd7afa06875216576c4}{delete\+\_\+orders} (int floor)
-\begin{DoxyCompactList}\small\item\em Deletes an entire row of orders in the {\ttfamily Q\+\_\+\+M\+A\+T\+R\+IX} by setting them to 0. \end{DoxyCompactList}\item 
-bool \hyperlink{queue_8h_a87a6de47c0074f9c655ebbb6e0c6aefb}{order\+\_\+at\+\_\+current\+\_\+floor} ()
+\begin{DoxyCompactList}\small\item\em Deletes an entire row of orders in the {\ttfamily G\+\_\+\+Q\+\_\+\+M\+A\+T\+R\+IX} by setting them to 0. \end{DoxyCompactList}\item 
+bool \hyperlink{queue_8h_a7472aa813a1fdc312000c9850c819fe9}{order\+\_\+at\+\_\+current\+\_\+floor} (int floor)
 \begin{DoxyCompactList}\small\item\em Checks if there are any orders at the current floor. \end{DoxyCompactList}\item 
-bool \hyperlink{queue_8h_a1127beaa074059a8e4ba002d3b318457}{orders\+\_\+below\+\_\+floor} ()
+bool \hyperlink{queue_8h_a3926a2175294e5b9a6977d7f57f972d9}{orders\+\_\+below\+\_\+floor} (int current\+\_\+floor)
 \begin{DoxyCompactList}\small\item\em Checks if there are any orders below the current floor. \end{DoxyCompactList}\item 
-bool \hyperlink{queue_8h_a2012e4d62d555ca9be14cac41f857e53}{orders\+\_\+above\+\_\+floor} ()
-\begin{DoxyCompactList}\small\item\em Checks if there are any orders above the current floor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \hyperlink{queue_8h_a8fa9603dad41e672c426d5ddeb2d1ae8}{orders\+\_\+above\+\_\+floor} (int current\+\_\+floor)
+\begin{DoxyCompactList}\small\item\em Checks if there are any orders above the current floor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{queue_8h_ac3cbb05034ff71c26f5b7eab1df24dbf}\label{queue_8h_ac3cbb05034ff71c26f5b7eab1df24dbf}} 
+void \hyperlink{queue_8h_ac3cbb05034ff71c26f5b7eab1df24dbf}{set\+\_\+order\+\_\+lights} ()
+\begin{DoxyCompactList}\small\item\em Turns the lights on for which buttons are pushed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{queue_8h_aa396c10ab87fb9726756d45c2f5fc863}\label{queue_8h_aa396c10ab87fb9726756d45c2f5fc863}} 
-unsigned int \hyperlink{queue_8h_aa396c10ab87fb9726756d45c2f5fc863}{Q\+\_\+\+M\+A\+T\+R\+IX} \mbox{[}H\+A\+R\+D\+W\+A\+R\+E\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+F\+L\+O\+O\+RS\mbox{]}\mbox{[}3\mbox{]}
+\mbox{\Hypertarget{queue_8h_a50fc4ecb0484b5dd0520a6396fb96616}\label{queue_8h_a50fc4ecb0484b5dd0520a6396fb96616}} 
+unsigned int \hyperlink{queue_8h_a50fc4ecb0484b5dd0520a6396fb96616}{G\+\_\+\+Q\+\_\+\+M\+A\+T\+R\+IX} \mbox{[}H\+A\+R\+D\+W\+A\+R\+E\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+F\+L\+O\+O\+RS\mbox{]}\mbox{[}3\mbox{]}
 \begin{DoxyCompactList}\small\item\em A matrix to save all the orders in. The rows represent floors, while the colums represent order type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-File that will make and update the queue system for all the orders. 
+File that will handle all the orders by updating a matrix ( {\ttfamily G\+\_\+\+Q\+\_\+\+M\+A\+T\+R\+IX} ). 
 
 
 
@@ -55,10 +64,10 @@ File that will make and update the queue system for all the orders.
 
 
 
-checks to see if there are any orders in the Q\+\_\+\+M\+A\+T\+R\+IX. 
+checks to see if there are any orders in the {\ttfamily G\+\_\+\+Q\+\_\+\+M\+A\+T\+R\+IX}. 
 
 \begin{DoxyReturn}{Returns}
-1 if there are only 0 in the Q\+\_\+\+M\+A\+T\+R\+IX. If there are any 1 values in the Q\+\_\+\+M\+A\+T\+R\+IX, the function will return false. 
+1 if there are only 0 in the {\ttfamily G\+\_\+\+Q\+\_\+\+M\+A\+T\+R\+IX}. If there are any 1 values in the Q\+\_\+\+M\+A\+T\+R\+IX, the function will return false. 
 \end{DoxyReturn}
 
 
@@ -72,7 +81,7 @@ Definition at line 25 of file queue.\+c.
 
 
 
-Deletes an entire row of orders in the {\ttfamily Q\+\_\+\+M\+A\+T\+R\+IX} by setting them to 0. 
+Deletes an entire row of orders in the {\ttfamily G\+\_\+\+Q\+\_\+\+M\+A\+T\+R\+IX} by setting them to 0. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -83,11 +92,11 @@ Deletes an entire row of orders in the {\ttfamily Q\+\_\+\+M\+A\+T\+R\+IX} by se
 
 Definition at line 36 of file queue.\+c.
 
-\mbox{\Hypertarget{queue_8h_a87a6de47c0074f9c655ebbb6e0c6aefb}\label{queue_8h_a87a6de47c0074f9c655ebbb6e0c6aefb}} 
+\mbox{\Hypertarget{queue_8h_a7472aa813a1fdc312000c9850c819fe9}\label{queue_8h_a7472aa813a1fdc312000c9850c819fe9}} 
 \index{queue.\+h@{queue.\+h}!order\+\_\+at\+\_\+current\+\_\+floor@{order\+\_\+at\+\_\+current\+\_\+floor}}
 \index{order\+\_\+at\+\_\+current\+\_\+floor@{order\+\_\+at\+\_\+current\+\_\+floor}!queue.\+h@{queue.\+h}}
 \subsubsection{\texorpdfstring{order\+\_\+at\+\_\+current\+\_\+floor()}{order\_at\_current\_floor()}}
-{\footnotesize\ttfamily bool order\+\_\+at\+\_\+current\+\_\+floor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool order\+\_\+at\+\_\+current\+\_\+floor (\begin{DoxyParamCaption}\item[{int}]{floor }\end{DoxyParamCaption})}
 
 
 
@@ -100,11 +109,11 @@ Returns true if the statement above is true. Else it returs false.
 
 Definition at line 42 of file queue.\+c.
 
-\mbox{\Hypertarget{queue_8h_a2012e4d62d555ca9be14cac41f857e53}\label{queue_8h_a2012e4d62d555ca9be14cac41f857e53}} 
+\mbox{\Hypertarget{queue_8h_a8fa9603dad41e672c426d5ddeb2d1ae8}\label{queue_8h_a8fa9603dad41e672c426d5ddeb2d1ae8}} 
 \index{queue.\+h@{queue.\+h}!orders\+\_\+above\+\_\+floor@{orders\+\_\+above\+\_\+floor}}
 \index{orders\+\_\+above\+\_\+floor@{orders\+\_\+above\+\_\+floor}!queue.\+h@{queue.\+h}}
 \subsubsection{\texorpdfstring{orders\+\_\+above\+\_\+floor()}{orders\_above\_floor()}}
-{\footnotesize\ttfamily bool orders\+\_\+above\+\_\+floor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool orders\+\_\+above\+\_\+floor (\begin{DoxyParamCaption}\item[{int}]{current\+\_\+floor }\end{DoxyParamCaption})}
 
 
 
@@ -117,11 +126,11 @@ Returns true if the statement above is true. Else it returs false.
 
 Definition at line 75 of file queue.\+c.
 
-\mbox{\Hypertarget{queue_8h_a1127beaa074059a8e4ba002d3b318457}\label{queue_8h_a1127beaa074059a8e4ba002d3b318457}} 
+\mbox{\Hypertarget{queue_8h_a3926a2175294e5b9a6977d7f57f972d9}\label{queue_8h_a3926a2175294e5b9a6977d7f57f972d9}} 
 \index{queue.\+h@{queue.\+h}!orders\+\_\+below\+\_\+floor@{orders\+\_\+below\+\_\+floor}}
 \index{orders\+\_\+below\+\_\+floor@{orders\+\_\+below\+\_\+floor}!queue.\+h@{queue.\+h}}
 \subsubsection{\texorpdfstring{orders\+\_\+below\+\_\+floor()}{orders\_below\_floor()}}
-{\footnotesize\ttfamily bool orders\+\_\+below\+\_\+floor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool orders\+\_\+below\+\_\+floor (\begin{DoxyParamCaption}\item[{int}]{current\+\_\+floor }\end{DoxyParamCaption})}
 
 
 

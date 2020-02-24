@@ -1,13 +1,10 @@
 /**
 * @file
-* @brief File that will make and update the queue system for all the orders.
+* @brief File that will handle all the orders by updating a matrix ( @c G_Q_MATRIX ).
 */
-#pragma once
+#ifndef QUEUE_H
+#define QUEUE_H
 
-#include <stdbool.h>
-#include "hardware.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include "elevator_cart.h"
 
 
@@ -48,19 +45,26 @@ void delete_orders(int floor);
 * @return Returns true if the statement above is true. Else it returs false.
 */
 
-bool order_at_current_floor();
+bool order_at_current_floor(int floor);
 
 /**
 * @brief Checks if there are any orders below the current floor.
 * @return Returns true if the statement above is true. Else it returs false.
 */
 
-bool orders_below_floor();
+bool orders_below_floor(int current_floor);
 
 /**
 * @brief Checks if there are any orders above the current floor.
 * @return Returns true if the statement above is true. Else it returs false.
 */
 
-bool orders_above_floor();
+bool orders_above_floor(int current_floor);
 
+/**
+* @brief Turns the lights on for which buttons are pushed. 
+*/
+
+void set_order_lights() ;
+
+#endif //QUEUE_H

@@ -68,23 +68,26 @@ $(function() {
 <div class="title">state_machine.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="motor__control_8h_source.html">motor_control.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="queue_8h_source.html">queue.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="elevator__cart_8h_source.html">elevator_cart.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="hardware_8h_source.html">hardware.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="motor__control_8h_source.html">motor_control.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for state_machine.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="state__machine_8h__incl.png" border="0" usemap="#source_2state__machine_8h" alt=""/></div>
-<!-- MAP 0 -->
+<map name="source_2state__machine_8h" id="source_2state__machine_8h">
+<area shape="rect" id="node2" href="motor__control_8h.html" title="file that will calculate the distination and how to get there. " alt="" coords="187,80,299,107"/>
+<area shape="rect" id="node3" href="queue_8h.html" title="File that will handle all the orders by updating a matrix ( G_Q_MATRIX ). " alt="" coords="165,155,233,181"/>
+<area shape="rect" id="node4" href="elevator__cart_8h_source.html" title="elevator_cart.h" alt="" coords="145,229,253,256"/>
+<area shape="rect" id="node5" href="hardware_8h.html" title="Driver for the elevator hardware. " alt="" coords="5,304,92,331"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="state__machine_8h__dep__incl.png" border="0" usemap="#source_2state__machine_8hdep" alt=""/></div>
-<!-- MAP 1 -->
+<map name="source_2state__machine_8hdep" id="source_2state__machine_8hdep">
+<area shape="rect" id="node2" href="main_8c_source.html" title="source/main.c" alt="" coords="5,80,109,107"/>
+<area shape="rect" id="node3" href="state__machine_8c_source.html" title="source/state_machine.c" alt="" coords="134,80,295,107"/>
+</map>
 </div>
 </div>
 <p><a href="state__machine_8h_source.html">Go to the source code of this file.</a></p>
@@ -94,29 +97,17 @@ Functions</h2></td></tr>
 <tr class="memitem:a39943273f62c5b66673647a0a6cdb457"><td class="memItemLeft" align="right" valign="top"><a id="a39943273f62c5b66673647a0a6cdb457"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>state_machine</b> ()</td></tr>
 <tr class="separator:a39943273f62c5b66673647a0a6cdb457"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3aa5cf92f972d3c67e203a9d3eb4808f"><td class="memItemLeft" align="right" valign="top"><a id="a3aa5cf92f972d3c67e203a9d3eb4808f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state__machine_8h.html#a3aa5cf92f972d3c67e203a9d3eb4808f">update_elevator</a> ()</td></tr>
-<tr class="memdesc:a3aa5cf92f972d3c67e203a9d3eb4808f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will update <code>Q_MATRIX</code>, <code>prev_floor</code> and the lights by calling <code>update_queue</code> , <code>set_lights</code> and <code>set_prev_floor</code> . <br /></td></tr>
-<tr class="separator:a3aa5cf92f972d3c67e203a9d3eb4808f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd58340463020de9767f38b6ae87179f"><td class="memItemLeft" align="right" valign="top"><a id="afd58340463020de9767f38b6ae87179f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state__machine_8h.html#afd58340463020de9767f38b6ae87179f">move_upwards</a> ()</td></tr>
-<tr class="memdesc:afd58340463020de9767f38b6ae87179f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the elevator upwards to its <code>destination</code>. <br /></td></tr>
-<tr class="separator:afd58340463020de9767f38b6ae87179f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8cd1fd0fe0f7271d59ec9d04c8d482b"><td class="memItemLeft" align="right" valign="top"><a id="af8cd1fd0fe0f7271d59ec9d04c8d482b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state__machine_8h.html#af8cd1fd0fe0f7271d59ec9d04c8d482b">move_downwards</a> ()</td></tr>
-<tr class="memdesc:af8cd1fd0fe0f7271d59ec9d04c8d482b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the elevator downwards to its <code>destination</code>. <br /></td></tr>
-<tr class="separator:af8cd1fd0fe0f7271d59ec9d04c8d482b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3260edaebb6f79c66a07fbba62c22bdb"><td class="memItemLeft" align="right" valign="top"><a id="a3260edaebb6f79c66a07fbba62c22bdb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state__machine_8h.html#a3260edaebb6f79c66a07fbba62c22bdb">stop_elevator</a> ()</td></tr>
-<tr class="memdesc:a3260edaebb6f79c66a07fbba62c22bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the elevator only when there is an emergency. <br /></td></tr>
-<tr class="separator:a3260edaebb6f79c66a07fbba62c22bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab76cb39ea234d8f2a8836f7c7218cbe4"><td class="memItemLeft" align="right" valign="top"><a id="ab76cb39ea234d8f2a8836f7c7218cbe4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state__machine_8h.html#ab76cb39ea234d8f2a8836f7c7218cbe4">set_elevator_state</a> ()</td></tr>
-<tr class="memdesc:ab76cb39ea234d8f2a8836f7c7218cbe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chooses which <code>states</code> the elevator will go to next by updating <code>state</code>. <br /></td></tr>
+<tr class="memdesc:ab76cb39ea234d8f2a8836f7c7218cbe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chooses which <code>elevatpr_states</code> the elevator will go to next by updating <code>g_state</code>. <br /></td></tr>
 <tr class="separator:ab76cb39ea234d8f2a8836f7c7218cbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58e8f191c83ab37582b8c789c39722dc"><td class="memItemLeft" align="right" valign="top"><a id="a58e8f191c83ab37582b8c789c39722dc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state__machine_8h.html#a58e8f191c83ab37582b8c789c39722dc">set_moving_state</a> ()</td></tr>
+<tr class="memdesc:a58e8f191c83ab37582b8c789c39722dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">chooses between two states MOVING_UP or MOVING_DOWN according to last direction and orders. <br /></td></tr>
+<tr class="separator:a58e8f191c83ab37582b8c789c39722dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a075099d294f5f4d5b63f53c2c9edd462"><td class="memItemLeft" align="right" valign="top"><a id="a075099d294f5f4d5b63f53c2c9edd462"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state__machine_8h.html#a075099d294f5f4d5b63f53c2c9edd462">check_stop</a> ()</td></tr>
-<tr class="memdesc:a075099d294f5f4d5b63f53c2c9edd462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if the emergency stop button is pressed. <br /></td></tr>
+<tr class="memdesc:a075099d294f5f4d5b63f53c2c9edd462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if the emergency stop button is pressed. If button is presses <code>g_state</code> changes to <code>STOP</code>. <br /></td></tr>
 <tr class="separator:a075099d294f5f4d5b63f53c2c9edd462"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

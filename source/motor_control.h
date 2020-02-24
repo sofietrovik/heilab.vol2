@@ -2,76 +2,62 @@
 * @file 
 * @brief file that will calculate the distination and how to get there. 
 */
+#ifndef MOTOR_CONTROL_H
+#define MOTOR_CONTROL_H
+
+#include "queue.h"
+
+#include <time.h>
 
 
 
-#include "elevator_cart.h"
-#include <stdio.h>
-#include <stdlib.h>
 
+void initialize();
 
-typedef enum{
-	UP,
-	DOWN,
-}Direction;
+/**
+*@brief Moves the elevator upwards to its @c g_destination.
+*/
+
+void move_upwards();
+
+/**
+*@brief Moves the elevator downwards to its @c g_destination.
+*/
+
+void move_downwards();
 
 
 /**
-* @brief Global variable for the last floor the elevator was on
+*@brief Stops the elevator only when there is an emergency
 */
-int g_prev_floor;
 
-
+void stop_elevator();
 
 /**
-* @brief saves the last direction the elevator had. It can only be up or down.
+* @brief Stops the elevator and then opens the elevator doors for 3 seconds. If there is a obstruction or if a button at the floor is being pushed, it restarts the timer. 
 */
 
-Direction g_prev_direction;
+void open_door();
 
-/**
-* @brief Global variable for the next floor the elevator should move to. 
-*/
-
-int g_destination;
-
-/**
-* @brief chooses between two states MOVING_UP or MOVING_DOWN according to last direction and orders. 
-*/
-
-void set_moving_state();
 
 /**
 * @brief Elevator is moving upwards, and this function will set the destination by prioritizing inside or up buttons pushed over down buttons pushed. 
 */
 
-void set_destination_up();
+int set_destination_up();
 
 /**
 * @brief Elevator is moving downwards, and this function will set the destination by prioritizing inside or down buttons pushed over up buttons pushed. 
 */
-void set_destination_down();
-
-
-/**
-* @brief Returns which floor the elevator is currelty on or if it is between floors. 
-*
-* @return Returns 0 for the first floor, returns 1 for the second floor, returns 2 for the third floor and 3 for the fourth floor. Returns -1 if the elevator is between floors or not on any of the four floors.  
-*
-* @warning Elevator has to be between 1 and 4 floors.
-*/
-int get_floor_number();
+int set_destination_down();
 
 /**
-* @brief Updates which floor the last passed. 
+*@brief Will update @c G_Q_MATRIX, @c g_prev_floor and the lights by calling @c update_queue , @c set_lights and @c set_prev_floor .
 */
 
-void set_prev_floor();
-
-/**
-* @brief Initializes the elevator by moving the elevator to the first floor. 
-*/
-
-void initialize();
+void update_elevator();
 
 
+
+
+#endif //MOTOR_CONTROL_H

@@ -63,9 +63,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">motor_control.h File Reference</div>  </div>
 </div><!--header-->
@@ -73,56 +71,65 @@ $(function() {
 
 <p>file that will calculate the distination and how to get there.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="elevator__cart_8h_source.html">elevator_cart.h</a>&quot;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="queue_8h_source.html">queue.h</a>&quot;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for motor_control.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="motor__control_8h__incl.png" border="0" usemap="#source_2motor__control_8h" alt=""/></div>
-<!-- MAP 0 -->
+<map name="source_2motor__control_8h" id="source_2motor__control_8h">
+<area shape="rect" id="node2" href="queue_8h.html" title="File that will handle all the orders by updating a matrix ( G_Q_MATRIX ). " alt="" coords="165,80,233,107"/>
+<area shape="rect" id="node3" href="elevator__cart_8h_source.html" title="elevator_cart.h" alt="" coords="145,155,253,181"/>
+<area shape="rect" id="node4" href="hardware_8h.html" title="Driver for the elevator hardware. " alt="" coords="5,229,92,256"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="motor__control_8h__dep__incl.png" border="0" usemap="#source_2motor__control_8hdep" alt=""/></div>
-<!-- MAP 1 -->
+<map name="source_2motor__control_8hdep" id="source_2motor__control_8hdep">
+<area shape="rect" id="node2" href="state__machine_8h.html" title="source/state_machine.h" alt="" coords="55,80,217,107"/>
+<area shape="rect" id="node5" href="motor__control_8c_source.html" title="source/motor_control.c" alt="" coords="241,80,396,107"/>
+<area shape="rect" id="node3" href="main_8c_source.html" title="source/main.c" alt="" coords="5,155,109,181"/>
+<area shape="rect" id="node4" href="state__machine_8c_source.html" title="source/state_machine.c" alt="" coords="134,155,295,181"/>
+</map>
 </div>
 </div>
 <p><a href="motor__control_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a224b9163917ac32fc95a60d8c1eec3aa"><td class="memItemLeft" align="right" valign="top"><a id="a224b9163917ac32fc95a60d8c1eec3aa"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Direction</b> { <b>UP</b>, 
-<b>DOWN</b>
- }</td></tr>
-<tr class="separator:a224b9163917ac32fc95a60d8c1eec3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a58e8f191c83ab37582b8c789c39722dc"><td class="memItemLeft" align="right" valign="top"><a id="a58e8f191c83ab37582b8c789c39722dc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#a58e8f191c83ab37582b8c789c39722dc">set_moving_state</a> ()</td></tr>
-<tr class="memdesc:a58e8f191c83ab37582b8c789c39722dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">chooses between two states MOVING_UP or MOVING_DOWN according to last direction and orders. <br /></td></tr>
-<tr class="separator:a58e8f191c83ab37582b8c789c39722dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15ab352e2be5569c4d7ff29fde029e4b"><td class="memItemLeft" align="right" valign="top"><a id="a15ab352e2be5569c4d7ff29fde029e4b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#a15ab352e2be5569c4d7ff29fde029e4b">set_destination_up</a> ()</td></tr>
-<tr class="memdesc:a15ab352e2be5569c4d7ff29fde029e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elevator is moving upwards, and this function will set the destination by prioritizing inside or up buttons pushed over down buttons pushed. <br /></td></tr>
-<tr class="separator:a15ab352e2be5569c4d7ff29fde029e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadeafb163700c216e7d0fb5cf9b41cf4"><td class="memItemLeft" align="right" valign="top"><a id="aadeafb163700c216e7d0fb5cf9b41cf4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#aadeafb163700c216e7d0fb5cf9b41cf4">set_destination_down</a> ()</td></tr>
-<tr class="memdesc:aadeafb163700c216e7d0fb5cf9b41cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elevator is moving downwards, and this function will set the destination by prioritizing inside or down buttons pushed over up buttons pushed. <br /></td></tr>
-<tr class="separator:aadeafb163700c216e7d0fb5cf9b41cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a9a6b3cc251d5ad9738bfc2721fe58b36"><td class="memItemLeft" align="right" valign="top"><a id="a9a6b3cc251d5ad9738bfc2721fe58b36"></a>
-Direction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#a9a6b3cc251d5ad9738bfc2721fe58b36">prev_direction</a></td></tr>
-<tr class="memdesc:a9a6b3cc251d5ad9738bfc2721fe58b36"><td class="mdescLeft">&#160;</td><td class="mdescRight">saves the last direction the elevator had. It can only be up or down. <br /></td></tr>
-<tr class="separator:a9a6b3cc251d5ad9738bfc2721fe58b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17744967a9eda456c21490b51b74917a"><td class="memItemLeft" align="right" valign="top"><a id="a17744967a9eda456c21490b51b74917a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#a17744967a9eda456c21490b51b74917a">destination</a></td></tr>
-<tr class="memdesc:a17744967a9eda456c21490b51b74917a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global variable for the next floor the elevator should move to. <br /></td></tr>
-<tr class="separator:a17744967a9eda456c21490b51b74917a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a40b6614565f755233080a384c35f1"><td class="memItemLeft" align="right" valign="top"><a id="a25a40b6614565f755233080a384c35f1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> ()</td></tr>
+<tr class="separator:a25a40b6614565f755233080a384c35f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd58340463020de9767f38b6ae87179f"><td class="memItemLeft" align="right" valign="top"><a id="afd58340463020de9767f38b6ae87179f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#afd58340463020de9767f38b6ae87179f">move_upwards</a> ()</td></tr>
+<tr class="memdesc:afd58340463020de9767f38b6ae87179f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the elevator upwards to its <code>g_destination</code>. <br /></td></tr>
+<tr class="separator:afd58340463020de9767f38b6ae87179f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8cd1fd0fe0f7271d59ec9d04c8d482b"><td class="memItemLeft" align="right" valign="top"><a id="af8cd1fd0fe0f7271d59ec9d04c8d482b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#af8cd1fd0fe0f7271d59ec9d04c8d482b">move_downwards</a> ()</td></tr>
+<tr class="memdesc:af8cd1fd0fe0f7271d59ec9d04c8d482b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the elevator downwards to its <code>g_destination</code>. <br /></td></tr>
+<tr class="separator:af8cd1fd0fe0f7271d59ec9d04c8d482b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3260edaebb6f79c66a07fbba62c22bdb"><td class="memItemLeft" align="right" valign="top"><a id="a3260edaebb6f79c66a07fbba62c22bdb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#a3260edaebb6f79c66a07fbba62c22bdb">stop_elevator</a> ()</td></tr>
+<tr class="memdesc:a3260edaebb6f79c66a07fbba62c22bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the elevator only when there is an emergency. <br /></td></tr>
+<tr class="separator:a3260edaebb6f79c66a07fbba62c22bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423745a554b7b74fd8a6ee276f3ee4f6"><td class="memItemLeft" align="right" valign="top"><a id="a423745a554b7b74fd8a6ee276f3ee4f6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#a423745a554b7b74fd8a6ee276f3ee4f6">open_door</a> ()</td></tr>
+<tr class="memdesc:a423745a554b7b74fd8a6ee276f3ee4f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the elevator and then opens the elevator doors for 3 seconds. If there is a obstruction or if a button at the floor is being pushed, it restarts the timer. <br /></td></tr>
+<tr class="separator:a423745a554b7b74fd8a6ee276f3ee4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a950c02dcabff8229d650fdade57cceae"><td class="memItemLeft" align="right" valign="top"><a id="a950c02dcabff8229d650fdade57cceae"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#a950c02dcabff8229d650fdade57cceae">set_destination_up</a> ()</td></tr>
+<tr class="memdesc:a950c02dcabff8229d650fdade57cceae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elevator is moving upwards, and this function will set the destination by prioritizing inside or up buttons pushed over down buttons pushed. <br /></td></tr>
+<tr class="separator:a950c02dcabff8229d650fdade57cceae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab79d2e922467d5f05f126b5392b00225"><td class="memItemLeft" align="right" valign="top"><a id="ab79d2e922467d5f05f126b5392b00225"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#ab79d2e922467d5f05f126b5392b00225">set_destination_down</a> ()</td></tr>
+<tr class="memdesc:ab79d2e922467d5f05f126b5392b00225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elevator is moving downwards, and this function will set the destination by prioritizing inside or down buttons pushed over up buttons pushed. <br /></td></tr>
+<tr class="separator:ab79d2e922467d5f05f126b5392b00225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa5cf92f972d3c67e203a9d3eb4808f"><td class="memItemLeft" align="right" valign="top"><a id="a3aa5cf92f972d3c67e203a9d3eb4808f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__control_8h.html#a3aa5cf92f972d3c67e203a9d3eb4808f">update_elevator</a> ()</td></tr>
+<tr class="memdesc:a3aa5cf92f972d3c67e203a9d3eb4808f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will update <code>G_Q_MATRIX</code>, <code>g_prev_floor</code> and the lights by calling <code>update_queue</code> , <code>set_lights</code> and <code>set_prev_floor</code> . <br /></td></tr>
+<tr class="separator:a3aa5cf92f972d3c67e203a9d3eb4808f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>file that will calculate the distination and how to get there. </p>

@@ -1,0 +1,11 @@
+<map id="source/hardware.h" name="source/hardware.h">
+<area shape="rect" id="node2" href="$elevator__cart_8h_source.html" title="source/elevator_cart.h" alt="" coords="153,80,303,107"/>
+<area shape="rect" id="node3" href="$elevator__cart_8c_source.html" title="source/elevator_cart.c" alt="" coords="75,155,226,181"/>
+<area shape="rect" id="node4" href="$queue_8h.html" title="File that will handle all the orders by updating a matrix ( G_Q_MATRIX ). " alt="" coords="250,155,361,181"/>
+<area shape="rect" id="node5" href="$motor__control_8h.html" title="file that will calculate the distination and how to get there. " alt="" coords="149,229,304,256"/>
+<area shape="rect" id="node10" href="$queue_8c_source.html" title="source/queue.c" alt="" coords="329,229,439,256"/>
+<area shape="rect" id="node6" href="$state__machine_8h.html" title="source/state_machine.h" alt="" coords="55,304,217,331"/>
+<area shape="rect" id="node9" href="$motor__control_8c_source.html" title="source/motor_control.c" alt="" coords="241,304,396,331"/>
+<area shape="rect" id="node7" href="$main_8c_source.html" title="source/main.c" alt="" coords="5,379,109,405"/>
+<area shape="rect" id="node8" href="$state__machine_8c_source.html" title="source/state_machine.c" alt="" coords="134,379,295,405"/>
+</map>
