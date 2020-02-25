@@ -42,6 +42,7 @@ void delete_orders(int floor);
 
 /**
 * @brief Checks if there are any orders at the current floor.
+* @param[in] floor 	The floor that indicates which floor the elevator is curretly on. 
 * @return Returns true if the statement above is true. Else it returs false.
 */
 
@@ -49,6 +50,7 @@ bool order_at_current_floor(int floor);
 
 /**
 * @brief Checks if there are any orders below the current floor.
+* @param[in] floor 	The floor that indicates which floor the elevator is curretly on. 
 * @return Returns true if the statement above is true. Else it returs false.
 */
 
@@ -56,6 +58,7 @@ bool orders_below_floor(int current_floor);
 
 /**
 * @brief Checks if there are any orders above the current floor.
+* @param[in] current_floor 	The floor that indicates which floor the elevator is curretly on. 
 * @return Returns true if the statement above is true. Else it returs false.
 */
 

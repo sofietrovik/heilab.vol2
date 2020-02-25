@@ -1,3 +1,8 @@
+/**
+* @file
+* @brief Initialzies global variables, inlcuding @c g_prev_floor , @c g_state and @c g_prev_direction .
+*/
+
 #ifndef ELEVATOR_CART_H
 #define ELEVATOR_CART_H
 
@@ -32,6 +37,9 @@ typedef enum {
 
 Elevator_states g_state;
 
+/**
+* @brief Enum for which directions the elevator can move in @c g_prev_direction
+*/
 
 typedef enum{
 	UP,
@@ -45,12 +53,6 @@ typedef enum{
 
 Direction g_prev_direction;
 
-
-///**
-//* @brief Global variable for the next floor the elevator should move to. 
-//*/
-
-//int g_destination;
 
 
 

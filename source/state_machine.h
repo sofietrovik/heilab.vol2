@@ -1,6 +1,6 @@
 /**
 *@file
-*@brief
+*@brief State machine and the way they move between the @c g_state .
 */
 #ifndef STATE_MACHINE_H
 #define STATE_MACHINE_H
@@ -21,8 +21,6 @@
 */
 
 void state_machine();
-
-
 
 
 /**

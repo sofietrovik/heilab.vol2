@@ -1,6 +1,6 @@
 /**
 * @file 
-* @brief file that will calculate the distination and how to get there. 
+* @brief File that will execute all the movements.  
 */
 #ifndef MOTOR_CONTROL_H
 #define MOTOR_CONTROL_H
@@ -47,12 +47,14 @@ void open_door();
 int set_destination_up();
 
 /**
-* @brief Elevator is moving downwards, and this function will set the destination by prioritizing inside or down buttons pushed over up buttons pushed. 
+* @brief Elevator is moving downwards, and this function will set the destination by prioritizing inside or down buttons pushed over up buttons pushed.
+* @return Returns the destination floor.  
 */
 int set_destination_down();
 
 /**
-*@brief Will update @c G_Q_MATRIX, @c g_prev_floor and the lights by calling @c update_queue , @c set_lights and @c set_prev_floor .
+* @brief Will update @c G_Q_MATRIX, @c g_prev_floor and the lights by calling @c update_queue , @c set_lights and @c set_prev_floor .
+* @return Returns the destination floor.
 */
 
 void update_elevator();
