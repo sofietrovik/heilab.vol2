@@ -48,13 +48,13 @@ int set_destination_up();
 
 /**
 * @brief Elevator is moving downwards, and this function will set the destination by prioritizing inside or down buttons pushed over up buttons pushed.
-* @return Returns the destination floor.  
+* @return Returns the destination floor. Will also return -2 if there are no buttons pushed in the given intervall.
 */
 int set_destination_down();
 
 /**
 * @brief Will update @c G_Q_MATRIX, @c g_prev_floor and the lights by calling @c update_queue , @c set_lights and @c set_prev_floor .
-* @return Returns the destination floor.
+* @return Returns the destination floor. Will also return -2 if there are no buttons pushed in the given intervall.
 */
 
 void update_elevator();
