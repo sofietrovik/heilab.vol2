@@ -155,7 +155,7 @@ int set_destination_down(){
 void update_elevator(){
 	update_queue();
     set_prev_floor();
-    set_order_lights();
+    set_order_lights(g_state);
 	hardware_command_floor_indicator_on(g_prev_floor);
 }
 
