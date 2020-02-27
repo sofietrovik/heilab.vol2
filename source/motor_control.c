@@ -31,12 +31,12 @@ void move_downwards(){
         if(get_floor_number() != -1){ //in case of in between floors, it should not update in case of multiple stop-signals and changing of directions
             g_prev_direction = DOWN;
      }
-        if(hardware_read_stop_signal()){
+       /* if(hardware_read_stop_signal()){
             g_state = STOP;
             break;
-        }
+        }*/
         hardware_command_movement(HARDWARE_MOVEMENT_DOWN);
-    }while(get_floor_number() != destination && get_floor_number() != 0); //not allowed to move past 1.st floor. 
+    }while(get_floor_number() != destination && get_floor_number() != 0 && !hardware_read_stop_signal()); //not allowed to move past 1.st floor. 
 
      set_prev_floor();
 
@@ -55,12 +55,8 @@ void move_upwards(){
         if(get_floor_number() != -1){ //in case of in between floors, it should not update in case of multiple stop-signals
             g_prev_direction = UP;
      }
-        if(hardware_read_stop_signal()){
-            g_state = STOP;
-            break;
-        }
         hardware_command_movement(HARDWARE_MOVEMENT_UP);
-    }while(get_floor_number() != destination && get_floor_number() != (HARDWARE_NUMBER_OF_FLOORS - 1)); //skal ikke bevege seg forbi 4.etasje
+    }while(get_floor_number() != destination && get_floor_number() != (HARDWARE_NUMBER_OF_FLOORS - 1) && !hardware_read_stop_signal()); //skal ikke bevege seg forbi 4.etasje
 
 
     set_prev_floor();
@@ -93,10 +89,10 @@ void open_door(){
     hardware_command_movement(HARDWARE_MOVEMENT_STOP);
     update_queue();
     set_order_lights();
-    if(hardware_read_stop_signal()){
+    /*if(hardware_read_stop_signal()){
         g_state = STOP;
         break;
-    }
+    }*/
     hardware_command_door_open(1);
     if (hardware_read_obstruction_signal() || order_at_current_floor(g_prev_floor)){
         start_time = clock();
@@ -104,7 +100,7 @@ void open_door(){
     }
 
 
-  } while (clock() - start_time < 3*CLOCKS_PER_SEC);
+  } while (clock() - start_time < 3*CLOCKS_PER_SEC && !hardware_read_stop_signal());
   
   hardware_command_door_open(0);
   }
