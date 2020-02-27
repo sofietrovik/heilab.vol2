@@ -91,10 +91,10 @@ bool orders_above_floor(int current_floor){
 }
 
 
-void set_order_lights() {
+void set_order_lights(Elevator_states state) {
 	for (int floor = 0; floor < HARDWARE_NUMBER_OF_FLOORS; ++floor){
         for (HardwareOrder button = HARDWARE_ORDER_UP; button <= HARDWARE_ORDER_DOWN; ++button){ 
-        	if (floor == get_floor_number() && g_state == DOOR_OPEN){
+        	if (floor == get_floor_number() && state == DOOR_OPEN){
         		hardware_command_order_light(floor, button, 0);
         	}
         	else{
