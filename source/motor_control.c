@@ -24,17 +24,14 @@ void move_downwards(){
     int destination;
     do{
         update_elevator();
-        destination = set_destination_down();
+        destination = get_destination_down();
         if (destination == -2){
             break;
         }
         if(get_floor_number() != -1){ //in case of in between floors, it should not update in case of multiple stop-signals and changing of directions
             g_prev_direction = DOWN;
      }
-       /* if(hardware_read_stop_signal()){
-            g_state = STOP;
-            break;
-        }*/
+    
         hardware_command_movement(HARDWARE_MOVEMENT_DOWN);
     }while(get_floor_number() != destination && get_floor_number() != 0 && !hardware_read_stop_signal()); //not allowed to move past 1.st floor. 
 
@@ -48,7 +45,7 @@ void move_upwards(){
     int destination;
     do{
     	update_elevator();
-        destination = set_destination_up();
+        destination = get_destination_up();
          if (destination == -2){
             break;
         }
@@ -82,17 +79,13 @@ void stop_elevator(){
 }
 
 void open_door(){
-  hardware_command_movement(HARDWARE_MOVEMENT_STOP);
 
   clock_t start_time = clock();
   do {
     hardware_command_movement(HARDWARE_MOVEMENT_STOP);
     update_queue();
     set_order_lights();
-    /*if(hardware_read_stop_signal()){
-        g_state = STOP;
-        break;
-    }*/
+  
     hardware_command_door_open(1);
     if (hardware_read_obstruction_signal() || order_at_current_floor(g_prev_floor)){
         start_time = clock();
@@ -103,11 +96,12 @@ void open_door(){
   } while (clock() - start_time < 3*CLOCKS_PER_SEC && !hardware_read_stop_signal());
   
   hardware_command_door_open(0);
+  delete_orders(get_floor_number());
   }
 
 
 
-int set_destination_up(){
+int get_destination_up(){
 
     //first priority is the nearest floor with an up or inside button pushed. 
     for (int floor = g_prev_floor; floor < HARDWARE_NUMBER_OF_FLOORS; ++floor){
@@ -125,11 +119,11 @@ int set_destination_up(){
         }
     }
 
-    return -2;
+    return -2; //The function should never return -2. If it returns -2 a mistake has happened
 
 }
 
-int set_destination_down(){
+int get_destination_down(){
 
     //first priority is the nearest floor with a down or inside button pushed.
     for (int floor = g_prev_floor; floor >= 0; --floor){ 

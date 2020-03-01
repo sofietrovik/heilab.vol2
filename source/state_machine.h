@@ -17,7 +17,7 @@
 
 
 /**
-* @brief 
+* @brief switches between states and executes state behaviour.
 */
 
 void state_machine();

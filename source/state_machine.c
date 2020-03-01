@@ -44,7 +44,6 @@ void state_machine(){
         update_elevator();
 
         open_door();
-        delete_orders(get_floor_number());
 
         if(hardware_read_stop_signal()){
         	g_state = STOP;

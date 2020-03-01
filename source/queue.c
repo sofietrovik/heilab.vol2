@@ -4,7 +4,7 @@
 
 
 
-void update_queue(){
+void update_queue(){ //Yes, it is a dobble for-loop. Cuz we know how much you like them ;)
     for (int floor = 0; floor < HARDWARE_NUMBER_OF_FLOORS; ++floor){
         for (HardwareOrder button = HARDWARE_ORDER_UP; button <= HARDWARE_ORDER_DOWN; ++button){ 
         	if (hardware_read_order(floor, button) == 1){

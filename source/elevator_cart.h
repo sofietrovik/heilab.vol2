@@ -17,8 +17,6 @@
 int g_prev_floor;
 
 
-
-
 /**
 *@brief Enum for elevator @c g_state. 
 */
@@ -52,8 +50,6 @@ typedef enum{
 */
 
 Direction g_prev_direction;
-
-
 
 
 /**
